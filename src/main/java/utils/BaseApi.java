@@ -82,7 +82,7 @@ public class BaseApi {
 	                request = RestAssured.given();
 	                return getRequest(url, headers, parameters);
 	            case "post":
-	                // Implement postRequest method when needed.
+	                // Implement postRequest method when needed. 
 	                // return postRequest(url, headers, parameters, body);
 	                break;
 	            default:
@@ -90,7 +90,6 @@ public class BaseApi {
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
-	        // Log the exception if needed.
 	    }
 	    return null;
 	}

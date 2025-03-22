@@ -50,13 +50,6 @@
 			<version>4.1.1</version> <!-- Must match RestAssured version -->
 		</dependency>
 
-		<!-- Apache HTTP Client (Required for Rest Assured 5.x) -->
-		<dependency>
-			<groupId>org.apache.httpcomponents.client5</groupId>
-			<artifactId>httpclient5</artifactId>
-			<version>5.2.1</version>
-		</dependency>
-
 		<!-- TestNG for test execution -->
 		<dependency>
 			<groupId>org.testng</groupId>
