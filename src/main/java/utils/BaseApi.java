@@ -147,40 +147,64 @@ public class BaseApi {
 
             // If JsonPath returns a list, check if any element matches expectedValue
             if (actualValue instanceof List<?> list && !list.isEmpty()) {
-                boolean matchFound = list.stream().map(Object::toString).anyMatch(value -> value.trim().equals(expectedValue.toString().trim()));
+                boolean matchFound = list.stream()
+                                         .map(Object::toString)
+                                         .anyMatch(value -> value.trim().equals(expectedValue.toString().trim()));
 
-                if (matchFound) {
-                    actualValue = expectedValue; // Assign expected value to pass assertion
-                } else {
-                    actualValue = list; // Keep full list for better error reporting
-                }
+                actualValue = matchFound ? expectedValue : list; // Assign expected value or full list for reporting
             }
         } catch (Exception e) {
-            softAssert.fail("Failed to extract value for " + attribute + " using path: " + jsonPath);
-            ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed to extract value for " + attribute + " using JSONPath: " + jsonPath);
+            logFailure(attribute, "Failed to extract value using JSONPath: " + jsonPath);
             return;
         }
 
         // Ensure actualValue is not null
         if (actualValue == null) {
-            softAssert.fail("Value not found for: " + attribute);
-            ExtentTestManager.getTest().log(LogStatus.FAIL, "Value not found for: " + attribute);
+            logFailure(attribute, "Value not found.");
             return;
         }
 
         // Convert both actual and expected values to Strings for comparison
-        String actualStr = String.valueOf(actualValue).trim();
-        String expectedStr = String.valueOf(expectedValue).trim();
+        String actualStr = actualValue.toString().trim();
+        String expectedStr = expectedValue.toString().trim();
 
-        // Perform assertion
+        // Perform soft assertion using a separate reusable method
+        performSoftAssertion(attribute, actualStr, expectedStr);
+    }
+
+    /**
+     * Performs soft assertion and logs results to Extent Reports.
+     *
+     * @param attribute    The attribute name being validated.
+     * @param actualStr    The actual value as a string.
+     * @param expectedStr  The expected value as a string.
+     */
+    private void performSoftAssertion(String attribute, String actualStr, String expectedStr) {
         boolean isMatch = actualStr.equals(expectedStr);
         softAssert.assertEquals(actualStr, expectedStr, "Mismatch for attribute: " + attribute);
 
         // Log result to Extent Report
         if (isMatch) {
-            ExtentTestManager.getTest().log(LogStatus.PASS, "Acceptance criteria matched for " + attribute + ". Expected: '" + expectedStr + "', Actual: '" + actualStr + "'");
+            ExtentTestManager.getTest().log(LogStatus.PASS, 
+                "Acceptance criteria matched for " + attribute + ". Expected: '" + expectedStr + "', Actual: '" + actualStr + "'");
         } else {
-            ExtentTestManager.getTest().log(LogStatus.FAIL, "Acceptance criteria mismatch for " + attribute + ". Expected: '" + expectedStr + "', Actual: '" + actualStr + "'");
+            ExtentTestManager.getTest().log(LogStatus.FAIL, 
+                "Acceptance criteria mismatch for " + attribute + ". Expected: '" + expectedStr + "', Actual: '" + actualStr + "'");
         }
-    }	
+    }
+
+    
+    /**
+     * Logs a failure case and reports to Extent Reports.
+     *
+     * @param attribute The attribute name.
+     * @param message   The failure message.
+     */
+    private void logFailure(String attribute, String message) {
+        softAssert.fail(attribute + ": " + message);
+        ExtentTestManager.getTest().log(LogStatus.FAIL, attribute + " - " + message);
+    }
+
+    
+	
 }

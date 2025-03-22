@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-22T23:35:24 NZDT" name="Suite" finished-at="2025-03-22T23:35:31 NZDT" duration-ms="6596">
+  <suite started-at="2025-03-23T09:45:47 NZDT" name="Suite" finished-at="2025-03-23T09:45:50 NZDT" duration-ms="2672">
     <groups>
     </groups>
-    <test started-at="2025-03-22T23:35:24 NZDT" name="Assurity API Test 1" finished-at="2025-03-22T23:35:31 NZDT" duration-ms="6596">
+    <test started-at="2025-03-23T09:45:47 NZDT" name="Assurity API Test 1" finished-at="2025-03-23T09:45:50 NZDT" duration-ms="2672">
       <class name="tests.ApiTest">
-        <test-method is-config="true" signature="setupExtentReport()[pri:0, instance:tests.ApiTest@759d26fb]" started-at="2025-03-22T23:35:24 NZDT" name="setupExtentReport" finished-at="2025-03-22T23:35:25 NZDT" duration-ms="459" status="PASS">
+        <test-method is-config="true" signature="setupExtentReport()[pri:0, instance:tests.ApiTest@759d26fb]" started-at="2025-03-23T09:45:47 NZDT" name="setupExtentReport" finished-at="2025-03-23T09:45:47 NZDT" duration-ms="216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupExtentReport -->
-        <test-method signature="validateApiResponse()[pri:0, instance:tests.ApiTest@759d26fb]" started-at="2025-03-22T23:35:25 NZDT" name="validateApiResponse" finished-at="2025-03-22T23:35:31 NZDT" duration-ms="6061" status="PASS">
+        <test-method signature="validateApiResponse()[pri:0, instance:tests.ApiTest@759d26fb]" started-at="2025-03-23T09:45:47 NZDT" name="validateApiResponse" finished-at="2025-03-23T09:45:50 NZDT" duration-ms="2385" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateApiResponse -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ApiTest@759d26fb]" started-at="2025-03-22T23:35:31 NZDT" name="tearDown" finished-at="2025-03-22T23:35:31 NZDT" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ApiTest@759d26fb]" started-at="2025-03-23T09:45:50 NZDT" name="tearDown" finished-at="2025-03-23T09:45:50 NZDT" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

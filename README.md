@@ -49,19 +49,27 @@ cd ApiTest
 
 ### 2. Verify Java Version
 
-This project requires **Java 17** to compile and run correctly. However, the `pom.xml` file also includes configurations for Java. Ensure that you have **Java 17 installed and set as the active version**:
+This project requires **Java 23** to compile and run correctly. 
 
 Check your Java version using:
+Ensure **Java 23.0.2** is installed:
 
-```bash
-java -version
-```
+   ```bash
+   java -version
+   ```
 
-If your Java version is different, update your system to use Java 17.
+If your Java version is different, update your system to use Java 23. Following are the setting used to test and run the project.
+
+- **Java Version:** OpenJDK 23.0.2 (Homebrew)
+- **Java Compiler (Javac) Version:** 23.0.2
+- **JRE System Library:** Java SE 17 (Configured in SDKs)
+- **Operating System:** macOS 14.0 (Sonoma)
+- **Architecture:** ARM64 (aarch64)
+-
 
 ### 3. Install Maven
 
-Maven is required to build and run the project. If you haven't installed it yet, download and install **Apache Maven** from [Maven's official website](https://maven.apache.org/download.cgi).
+Maven is required to build and run the project. If you haven't installed it yet, download and install **Apache Maven** from [Maven's official website](https://maven.apache.org/download.cgi).The project is built using Maven 3.8.5.
 
 To verify Maven installation, run:
 
@@ -69,7 +77,7 @@ To verify Maven installation, run:
 mvn -version
 ```
 
-Ensure that Maven is correctly installed and linked to Java 17.
+Ensure that Maven is correctly installed and linked to Java version.
 
 ### 4. Run the Tests
 
