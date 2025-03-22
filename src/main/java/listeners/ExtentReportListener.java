@@ -9,7 +9,7 @@ import extentreports.ExtentManager;
 import extentreports.ExtentTestManager;
 
 /**
- * TestNG Listener for managing Extent Reports life cycle. Automatically logs
+ * TestNG Listener for managing Extent Reports lifecycle. Automatically logs
  * test start, success, failure, and skip events.
  */
 public class ExtentReportListener implements ITestListener {

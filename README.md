@@ -49,7 +49,7 @@ cd ApiTest
 
 ### 2. Verify Java Version
 
-This project requires **Java 17** to compile and run correctly. However, the `pom.xml` file also includes configurations for Java 1.8. Ensure that you have **Java 17 installed and set as the active version**:
+This project requires **Java 17** to compile and run correctly. However, the `pom.xml` file also includes configurations for Java. Ensure that you have **Java 17 installed and set as the active version**:
 
 Check your Java version using:
 

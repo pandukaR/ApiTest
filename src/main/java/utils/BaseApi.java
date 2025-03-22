@@ -74,7 +74,7 @@ public class BaseApi {
 	 * @param body       The request body (for POST requests).
 	 * @return The API response.
 	 */
-	public final static Response makeApiRequest(String url, String headers, String method, String parameters, String body) {
+	public static Response makeApiRequest(String url, String headers, String method, String parameters, String body) {
 	    ExtentTestManager.getTest().log(LogStatus.INFO, "Endpoint URL: " + url);
 	    try {
 	        switch (method.toLowerCase()) {
